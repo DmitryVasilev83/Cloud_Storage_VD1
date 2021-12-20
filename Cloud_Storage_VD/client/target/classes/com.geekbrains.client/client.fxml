@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="434.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekbrains.client.ClientController">
+    <VBox alignment="center" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <MenuBar>
+            <Menu text="Файл">
+                <MenuItem onAction="#btnExitAction" text="Выйти из программы" />
+            </Menu>
+        </MenuBar>
+
+        <HBox VBox.vgrow="ALWAYS">
+            <VBox alignment="center" HBox.hgrow="ALWAYS" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+                <HBox>
+                    <ComboBox fx:id="disksBox" onAction="#selectDiskAction" />
+                    <TextField fx:id="pathField" editable="false" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#btnPathUpAction" text="Вверх" />
+                </HBox>
+                <TableView fx:id="filesTable" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <VBox alignment="center" HBox.hgrow="ALWAYS" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+                <TextField fx:id="clientText"  />
+                <TextField fx:id="login" layoutX="191.0" layoutY="21.0" prefHeight="0.0" prefWidth="235.0" promptText="Login" />
+                <PasswordField fx:id="pass" layoutX="191.0" layoutY="83.0" prefHeight="38.0" prefWidth="230.0" promptText="Password" />
+
+                <HBox VBox.vgrow="ALWAYS">
+                    <Button focusTraversable="false" maxWidth="Infinity" mnemonicParsing="false" onAction="#authToServer" prefHeight="26.0" prefWidth="122.0" text="Войти" HBox.hgrow="ALWAYS" />
+                    <Button focusTraversable="false" maxWidth="Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Зарегистрироваться" onAction="#registration" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <HBox>
+                    <TextField fx:id="pathFieldServer" editable="false" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#btnPathUpActionServer" text="Вверх" />
+                </HBox>
+                <ListView fx:id="serverFiles" prefHeight="348.0" prefWidth="261.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+
+            </VBox>
+        </HBox>
+
+
+        <HBox spacing="5">
+            <Button focusTraversable="false" maxWidth="Infinity" onAction="#upLoadFile" text="Upload" HBox.hgrow="ALWAYS" />
+            <Button focusTraversable="false" maxWidth="Infinity"  onAction="#DownLoadFile" text="DownLoad" HBox.hgrow="ALWAYS" />
+            <Button focusTraversable="false" maxWidth="Infinity" onAction="#initServerPanel" text="Show files" HBox.hgrow="ALWAYS" />
+            <Button focusTraversable="false" maxWidth="Infinity" onAction="#deleteFile" text="Delete" HBox.hgrow="ALWAYS" />
+            <Button focusTraversable="false" maxWidth="Infinity" onAction="#btnExitAction" text="Exit" HBox.hgrow="ALWAYS" />
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </HBox>
+    </VBox>
+
+
+</VBox>
+
